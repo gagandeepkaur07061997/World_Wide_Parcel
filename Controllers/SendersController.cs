@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -64,7 +65,7 @@ namespace World_Wide_Parcel.Controllers
             }
             return View(senders);
         }
-
+        [Authorize] //code to make the page Authorize so that only registered users can log in//
         // GET: Senders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -115,7 +116,7 @@ namespace World_Wide_Parcel.Controllers
             }
             return View(senders);
         }
-
+        [Authorize]//code to make the page Authorize so that only registered users can log in//
         // GET: Senders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

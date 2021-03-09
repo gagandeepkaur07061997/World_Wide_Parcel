@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace World_Wide_Parcel.Models
+//This class contains the information about Receivers means it tells about its ID, name, email.id, address and mobile number.//
 {
     public class Recievers
     {

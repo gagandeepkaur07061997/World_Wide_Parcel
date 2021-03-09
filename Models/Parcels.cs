@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace World_Wide_Parcel.Models
-{
+namespace World_Wide_Parcel.Models { 
+//This class contains the information about Parcel means it tells about its ID,date od delivery and some other main points and also include foreign key//
     public class Parcels
     {
         public int Id { get; set; }

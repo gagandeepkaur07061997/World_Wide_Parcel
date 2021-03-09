@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -68,7 +69,7 @@ namespace World_Wide_Parcel.Controllers
             ViewData["ParcelsId"] = new SelectList(_context.Set<Parcels>(), "Id", "Content_type", tracking.ParcelsId);
             return View(tracking);
         }
-
+        [Authorize]//code to make the page Authorize so that only registered users can log in//
         // GET: Trackings/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -121,7 +122,7 @@ namespace World_Wide_Parcel.Controllers
             ViewData["ParcelsId"] = new SelectList(_context.Set<Parcels>(), "Id", "Content_type", tracking.ParcelsId);
             return View(tracking);
         }
-
+        [Authorize]//code to make the page Authorize so that only registered users can log in//
         // GET: Trackings/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

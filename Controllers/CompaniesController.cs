@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,9 @@ using World_Wide_Parcel.Data;
 using World_Wide_Parcel.Models;
 
 namespace World_Wide_Parcel.Controllers
-{
+{ 
+    
+
     public class CompaniesController : Controller
     {
         private readonly World_Wide_ParcelDatabase _context;
@@ -42,13 +45,14 @@ namespace World_Wide_Parcel.Controllers
 
             return View(companies);
         }
-
+        [Authorize]
         // GET: Companies/Create
+
         public IActionResult Create()
         {
             return View();
         }
-
+      
         // POST: Companies/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -80,7 +84,7 @@ namespace World_Wide_Parcel.Controllers
             }
             return View(companies);
         }
-
+        [Authorize]//code to make the page Authorize so that only registered users can log in//
         // POST: Companies/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -115,7 +119,7 @@ namespace World_Wide_Parcel.Controllers
             }
             return View(companies);
         }
-
+        [Authorize]//code to make the page Authorize so that only registered users can log in//
         // GET: Companies/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
